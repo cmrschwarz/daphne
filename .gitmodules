@@ -4,3 +4,6 @@
 [submodule "src/tools/web-ui"]
 	path = src/tools/web-ui
 	url = https://github.com/daphne-eu/web-ui.git
+[submodule "star_schema_bench/StarSchemaBenchmark"]
+	path = star_schema_bench/StarSchemaBenchmark
+	url = git@github.com:cmrschwarz/StarSchemaBenchmark.git
