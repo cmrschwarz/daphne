@@ -1,0 +1,24 @@
+{
+    "numRows": 6001171,
+    "numCols": 17,
+    "valueType": "ui64",
+    "schema": [
+    {"label": "LO_ORDERKEY", "valueType": "ui64"},
+    {"label": "LO_LINENUMBER", "valueType": "ui8"},
+    {"label": "LO_CUSTKEY", "valueType": "ui64"},
+    {"label": "LO_PARTKEY", "valueType": "ui64"},
+    {"label": "LO_SUPPKEY", "valueType": "ui64"},
+    {"label": "LO_ORDERDATE", "valueType": "ui64"},
+    {"label": "LO_ORDPRIORITY", "valueType": "str"},
+    {"label": "LO_SHIPPRIORITY", "valueType": "str"},
+    {"label": "LO_QUANTITY", "valueType": "ui8"},
+    {"label": "LO_EXTENDEDPRICE", "valueType": "ui16"},
+    {"label": "LO_ORDTOTALPRICE", "valueType": "ui32"},
+    {"label": "LO_DISCOUNT", "valueType": "ui8"},
+    {"label": "LO_REVENUE", "valueType": "ui32"},
+    {"label": "LO_SUPPLYCOST", "valueType": "ui64"},
+    {"label": "LO_TAX", "valueType": "ui8"},
+    {"label": "LO_COMMITDATE", "valueType": "ui64"},
+    {"label": "LO_SHIPMODE", "valueType": "str"}
+    ]
+}
