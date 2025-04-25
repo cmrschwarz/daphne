@@ -1,7 +1,5 @@
 D = readFrame("star_schema_bench/data/test.csv");
 
-D = cbind(D[, "TEST_COL_1"], D[, "TEST_COL_3"]);
-
 selD = as.matrix(D[, "TEST_COL_3"]) == 3;
 
 D = D[[selD, ]];
