@@ -1,0 +1,57 @@
+// ****************************************************************************
+// Reading the base data
+// ****************************************************************************
+
+tp0 = now();
+
+L = readFrame("star_schema_bench/data/lineorder.csv");
+D = readFrame("star_schema_bench/data/date.csv");
+
+tp1 = now();
+
+// ****************************************************************************
+// Query part
+// ****************************************************************************
+
+/*
+ * Equivalent to the following SQL query:
+ *
+ * SELECT sum(LO_EXTENDEDPRICE*LO_DISCOUNT) AS revenue
+ * FROM lineorder, date
+ *  WHERE LO_ORDERDATE = D_DATEKEY
+ *  AND D_YEAR = 1993
+ *  AND LO_DISCOUNT BETWEEN 1 AND 3
+ *  AND LO_QUANTITY < 25;
+ */
+
+// Retain only those columns in lineorder we need for this query.
+L = cbind(cbind(L[, "LO_DISCOUNT"], L[, "LO_EXTENDEDPRICE"]), cbind(L[, "LO_ORDERDATE"], L[, "LO_QUANTITY"]));
+
+// Retain only those columns in date we need for this query.
+D = cbind(D[, "D_DATEKEY"], D[, "D_YEAR"]);
+
+selD = as.matrix(D[, "D_YEAR"]) == 1993;
+D = D[[selD, ]];
+
+selL = (as.matrix(L[, "LO_DISCOUNT"]) >= 1) && (as.matrix(L[, "LO_DISCOUNT"]) <= 3);
+L = L[[selL, ]];
+
+selL = as.matrix(L[, "LO_QUANTITY"]) < 25;
+L = cbind(cbind(L[, "LO_DISCOUNT"], L[, "LO_EXTENDEDPRICE"]), L[, "LO_ORDERDATE"]);
+L = L[[selL, ]];
+
+keys, tids = semiJoin(L, D, "LO_ORDERDATE", "D_DATEKEY");
+L = L[tids, ];
+
+revenue = sum(as.matrix(L[, "LO_EXTENDEDPRICE"]) * as.matrix(L[, "LO_DISCOUNT"]));
+
+# TODO Why can't we use a matrix literal here (`[revenue]`)?
+result = {"revenue": as.matrix(revenue)};
+
+tp2 = now();
+
+write(result, "res.csv"); # query result
+
+print("\t" + (tp1 - tp0), false, true); # runtime load
+print("\t" + (tp2 - tp1), false, true); # runtime query
+print("\t", false, true); # separator before --timing information

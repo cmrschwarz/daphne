@@ -1,0 +1,11 @@
+{
+    "numRows": 3,
+    "numCols": 5,
+    "schema": [
+        {"label": "TEST_COL_1", "valueType": "ui64"},
+        {"label": "TEST_COL_2", "valueType": "ui64"},
+        {"label": "TEST_COL_3", "valueType": "ui64"},
+        {"label": "TEST_COL_4", "valueType": "ui64"},
+        {"label": "TEST_COL_5", "valueType": "ui64"}
+    ]
+}

@@ -1,7 +1,6 @@
 {
-    "numRows": 2556,
+    "numRows": 10,
     "numCols": 17,
-    "valueType": "ui64",
     "schema": [
         {"label": "D_DATEKEY", "valueType": "ui64"},
         {"label": "D_DATE", "valueType": "str"},
@@ -10,15 +9,15 @@
         {"label": "D_YEAR", "valueType": "ui64"},
         {"label": "D_YEARMONTHNUM", "valueType": "str"},
         {"label": "D_YEARMONTH", "valueType": "str"},
-        {"label": "D_DAYNUMINWEEK", "valueType": "ui8"},
-        {"label": "D_DAYNUMINMONTH", "valueType": "ui8"},
-        {"label": "D_DAYNUMINYEAR", "valueType": "ui16"},
-        {"label": "D_MONTHNUMINYEAR", "valueType": "ui8"},
-        {"label": "D_WEEKNUMINYEAR", "valueType": "ui8"},
+        {"label": "D_DAYNUMINWEEK", "valueType": "ui64"},
+        {"label": "D_DAYNUMINMONTH", "valueType": "ui64"},
+        {"label": "D_DAYNUMINYEAR", "valueType": "ui64"},
+        {"label": "D_MONTHNUMINYEAR", "valueType": "ui64"},
+        {"label": "D_WEEKNUMINYEAR", "valueType": "ui64"},
         {"label": "D_SELLINGSEASON", "valueType": "str"},
-        {"label": "D_LASTDAYINWEEKFL", "valueType": "ui8"},
-        {"label": "D_LASTDAYINMONTHFL", "valueType": "ui8"},
-        {"label": "D_HOLIDAYFL", "valueType": "ui8"},
-        {"label": "D_WEEKDAYFL", "valueType": "ui8"}
+        {"label": "D_LASTDAYINWEEKFL", "valueType": "ui64"},
+        {"label": "D_LASTDAYINMONTHFL", "valueType": "ui64"},
+        {"label": "D_HOLIDAYFL", "valueType": "ui64"},
+        {"label": "D_WEEKDAYFL", "valueType": "ui64"}
     ]
 }
